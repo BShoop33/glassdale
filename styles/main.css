@@ -1,23 +1,31 @@
+body {
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    font-size: 14px;
+    color: #24292e;
+}
+
 .criminalsContainer {
     display: flex;
     flex-flow: wrap row;
     justify-content: space-around;
-    
 }
 
 .card-criminal{
     display: flex;
-    flex-flow: wrap column;
-    border: 2px;
-    border-color: black;
+    flex-direction: column;
+    border: 1px;
+    border-color: lightgray;
     border-style: solid;
     width: 20em;
     height: auto;
     text-align: left;
-    padding-left: 20px;
-    margin-right: 5em;
-    margin-left: 5em;
+    margin-right: 10em;
+    margin-left: 10em;
     margin-top: 10px;
     margin-bottom: 10px;
+    line-height: 3px;
 }
 
+ul {
+    list-style-type: none;
+  }
