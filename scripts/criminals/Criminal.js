@@ -1,6 +1,5 @@
 console.log("Criminal.js");
 
-
 export const CriminalsHTML = (criminalObj) => {
     return `
         <section id="criminal-${criminalObj.id}" class="card-criminal">
@@ -14,5 +13,4 @@ export const CriminalsHTML = (criminalObj) => {
             </ul>
         </section>
     `
-};
-
+}
