@@ -13,6 +13,9 @@ eventHub.addEventListener("crimeChosen", event => {
 
         render(matchingCriminals)
     }
+    else {
+        render(useCriminals())
+    }
 })
 
 export const CriminalList = () => {
