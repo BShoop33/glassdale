@@ -1,32 +1,38 @@
 console.log("ConvictionSelect.js");
 
+
+//imports the useConvictions and getConvictions function into this sheet from the COnvictionProvider.js sheet
 import { useConvictions, getConvictions } from "./ConvictionProvider.js"
 
+const eventHub = document.querySelector(".container")
 
-export const ConvictionSelect = () => {
-    getConvictions()
-        .then(() => {
-            const convictions = useConvictions()
-            render(convictions)
+const contentTarget = document.querySelector(".filters_crime")
+
+
+// places a listening device on the eventhub to detect any change events and evaluates that if an event does change at the crimeSelect location in HTML, then a new custom event
+// object named "detail" is created with the key for the value of that event being "crimeThatWasChosen". That custom event is then dispatched to the event hub
+eventHub.addEventListener("change", event => {
+    if (event.target.id === "crimeSelect") {
+        const customEvent = new CustomEvent("crimeChosen", {
+            detail: {
+                crimeThatWasChosen: event.target.value
+            }
         })
-}
+        eventHub.dispatchEvent(customEvent)
+    }
+})
 
-const contentTarget = document.querySelector(".convictionsContainer")
 
+// sets .filters_crime as the place in the HTML where this code will go. Then sets the innerHTML with the select dropdown code 
 
 const render = convictionsCollection => {
-    /*
-        Use interpolation here to invoke the map() method on
-        the convictionsCollection to generate the option elements.
-        Look back at the example provided above.
-    */
     contentTarget.innerHTML = `
         <select class="dropdown" id="crimeSelect">
-            <option value="0">Please select a crime . . . </option>
+            <option value="0">Please select a crime...</option>
             ${
         convictionsCollection.map(crimeObj => {
             const crime = crimeObj.name
-            return `<option>${crime}</option>`
+            return `<option class="filters_crime">${crime}</option>`
         })
         }
         </select >
@@ -34,94 +40,11 @@ const render = convictionsCollection => {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const render = convictionsCollection => {
-//     contentTarget.innerHTML = `
-//          <select class="dropdown" id="crimeSelect">
-//          <option value="0">Please enter the crime . . . </option>
-//              ${
-//         useConvictions.map(
-//             crimeObj => {
-//                 const crime = crimeObj.name
-//                 return crime
-//             }
-//         )
-//         }
-//          </select >
-//      `
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//import { getCriminals, useCriminals } from './criminals/CriminalProvider.js'
-
-// console.log("ConvictionSelect.js");
-
-// import { getCriminals, useCriminals } from '/scripts/criminals/CriminalProvider.js'
-
-// export const convictionList = useCriminals().map(
-//     crimeObject => {
-//         const pulledCrime = crimeObject.name
-//         return pulledCrime
-//     }
-// )
-
-// console.log("ConvictionSelect.js");
-
-// import { ConvictionHTML } from './Convictions.js'
-// import { useConvictions, getConvictions } from './ConvictionProvider.js'
-
-// export const ConvictionsList = () => {
-//     getConvictions()
-//         .then(() => {
-//             const convictionsArray = useConvictions();
-//             addConvictionsToDom(convictionsArray);
-//         });
-// };
-
-// // //embeds the criminals array data into HTML with the formatting provided by the CriminalsHTML function in the Criminal.js sheet
-// const addConvictionsToDom = (taco) => {
-//     const domElement = document.querySelector(".convictionsContainer");
-//     let convictionsHTMLArray = taco.map(singleConviction => {
-//         return ConvictionHTML(singleConviction);
-//     })
-
-//     domElement.innerHTML = convictionsHTMLArray.join("");
+//renders the useConvictions array of crimes
+export const ConvictionSelect = () => {
+    getConvictions()
+        .then(() => {
+            const convictions = useConvictions()
+            render(convictions)
+        })
+}

@@ -4,12 +4,16 @@ console.log("Good morning, Main.js");
 
 // OfficerList();
 
-// import { ConvictionSelect } from './convictions/ConvictionSelect.js'
+//import { ConvictionSelect } from './convictions/ConvictionSelect.js'
 
-// ConvictionSelect();
+//ConvictionSelect();
 
-import { CriminalsList } from './criminals/CriminalList.js'
-import { ConvictionSelect } from './convictions/ConvictionSelect.js';
+// import { criminals } from './criminals/CriminalList.js'
 
-CriminalsList();
+// criminals();
+
+import { ConvictionSelect } from './convictions/ConvictionSelect.js'
+
+//console.log(Convictions())
 ConvictionSelect();
+
