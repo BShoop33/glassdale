@@ -4,15 +4,10 @@ console.log("Main.js");
 
 // OfficerList();
 
-//import { ConvictionSelect } from './convictions/ConvictionSelect.js'
-
-//ConvictionSelect();
-
 import { CriminalList } from './criminals/CriminalList.js'
 
 CriminalList();
 
 import { ConvictionSelect } from './convictions/ConvictionSelect.js'
 
-//console.log(Convictions())
 ConvictionSelect();

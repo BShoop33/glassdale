@@ -7,7 +7,9 @@ const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".filters__crime")
 
 eventHub.addEventListener("change", event => {
+
     if (event.target.id === "crimeSelect") {
+
         const customEvent = new CustomEvent("crimeChosen", {
             detail: {
                 crimeThatWasChosen: event.target.value
@@ -18,7 +20,7 @@ eventHub.addEventListener("change", event => {
 })
 
 // Sets the innerHTML with the select dropdown code 
-const render = convictionsCollection => {
+const render = (convictionsCollection) => {
     contentTarget.innerHTML = `
         <select class="dropdown" id="crimeSelect">
             <option value="0">Please select a crime...</option>
