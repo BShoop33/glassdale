@@ -15,3 +15,4 @@ export const CriminalsHTML = (criminalObj) => {
         </section>
     `
 };
+

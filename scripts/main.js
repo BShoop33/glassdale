@@ -1,4 +1,4 @@
-console.log("Good morning, Main.js");
+console.log("Main.js");
 
 // import { OfficerList } from './officers/OfficerList.js';
 
@@ -8,12 +8,11 @@ console.log("Good morning, Main.js");
 
 //ConvictionSelect();
 
-// import { criminals } from './criminals/CriminalList.js'
+import { CriminalList } from './criminals/CriminalList.js'
 
-// criminals();
+CriminalList();
 
 import { ConvictionSelect } from './convictions/ConvictionSelect.js'
 
 //console.log(Convictions())
 ConvictionSelect();
-
