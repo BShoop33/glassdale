@@ -17,6 +17,22 @@ eventHub.addEventListener("crimeChosen", event => {
         render(useCriminals())
     }
 })
+//////////////////////////////////////////////////////////////////////////////////
+eventHub.addEventListener("officerSelect", event => {
+    // How can you access the officer name that was selected by the user?
+    const officerName = event.detail.officer
+
+    // How can you get the criminals that were arrested by that officer?
+    const criminals = useCriminals()
+    criminals.map(
+        criminalObject => {
+            if (criminalObject.arrestingOfficer === officerName) {
+                return true
+            }
+        }
+    )
+})
+//////////////////////////////////////////////////////////////////////////////////
 
 export const CriminalList = () => {
     getCriminals()

@@ -30,4 +30,12 @@ ul {
     list-style-type: none;
   }
 
- 
+.filters {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.dropdown {
+    margin-right: 3em;
+}
