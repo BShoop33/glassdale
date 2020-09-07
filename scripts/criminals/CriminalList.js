@@ -34,3 +34,4 @@ const render = (taco) => {
     })
     domElement.innerHTML = criminalsHTMLArray.join("");
 }
+
