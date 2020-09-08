@@ -1,3 +1,5 @@
+console.log("CriminalProvider.js");
+
 let criminals = [];
 
 export const useCriminals = () => criminals.slice()

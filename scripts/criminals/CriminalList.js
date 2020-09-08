@@ -3,6 +3,7 @@ console.log("CriminalList.js");
 import { CriminalsHTML } from './Criminal.js'
 import { getCriminals, useCriminals } from './CriminalProvider.js'
 
+
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("crimeChosen", event => {
@@ -10,29 +11,26 @@ eventHub.addEventListener("crimeChosen", event => {
         const matchingCriminals = useCriminals().filter(criminal => {
             return criminal.conviction === event.detail.crimeThatWasChosen
         })
-
         render(matchingCriminals)
     }
     else {
         render(useCriminals())
     }
 })
-//////////////////////////////////////////////////////////////////////////////////
-eventHub.addEventListener("officerSelect", event => {
-    // How can you access the officer name that was selected by the user?
-    const officerName = event.detail.officer
 
-    // How can you get the criminals that were arrested by that officer?
-    const criminals = useCriminals()
-    criminals.map(
-        criminalObject => {
-            if (criminalObject.arrestingOfficer === officerName) {
-                return true
-            }
-        }
-    )
+eventHub.addEventListener("officerSelected", event => {
+    // How can you access the officer name that was selected by the user?
+    if (event.detail.officer !== "0") {
+        const matchedCriminals = useCriminals().filter(criminal => {
+            return criminal.arrestingOfficer === event.detail.officer
+        })
+        render(matchedCriminals)
+    }
+    else {
+        render(useCriminals())
+    }
+
 })
-//////////////////////////////////////////////////////////////////////////////////
 
 export const CriminalList = () => {
     getCriminals()
@@ -42,6 +40,14 @@ export const CriminalList = () => {
         })
 }
 
+export const OfficerSelect = () => {
+    getOfficer()
+        .then(() => {
+            const appStateOfficers = useOfficers()
+            render(appStateOfficers)
+        })
+}
+//////////////////////////////////////////////////////////
 const render = (taco) => {
 
     const domElement = document.querySelector(".criminalsContainer")
@@ -50,4 +56,3 @@ const render = (taco) => {
     })
     domElement.innerHTML = criminalsHTMLArray.join("");
 }
-

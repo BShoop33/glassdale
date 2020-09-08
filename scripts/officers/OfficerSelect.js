@@ -1,3 +1,5 @@
+console.log("OfficerSelect.js");
+
 import { useOfficers, getOfficers } from "./OfficerProvider.js"
 
 //creates a variable named eventHub and attaches it to the "container" class in the main portion of index.html
@@ -5,7 +7,7 @@ const eventHub = document.querySelector(".container")
 
 //creates a variable named contentTarget and attaches it to the "filters_crime" class in index.html
 const contentTarget = document.querySelector(".filters__officer")
-///////////////////////////////////////////////////////////////////
+
 eventHub.addEventListener("change", changeEvent => {
     if (changeEvent.target.id === "officerSelect") {
         const selectedOfficer = changeEvent.target.value
@@ -17,7 +19,7 @@ eventHub.addEventListener("change", changeEvent => {
         eventHub.dispatchEvent(customEvent)
     }
 })
-///////////////////////////////////////////////////////////////////
+
 const render = (officerCollection) => {
     contentTarget.innerHTML = `
         <select class="dropdown" id="officerSelect">
@@ -27,7 +29,7 @@ const render = (officerCollection) => {
             officerObj => {
                 const officer = officerObj.name
                 return `<option>${officer}</option>`
-            })
+            }).join("")
         }
         </select >
     `
@@ -37,7 +39,7 @@ const render = (officerCollection) => {
 export const OfficerSelect = () => {
     getOfficers()
         .then(() => {
-            const police = useOfficers()
-            render(police)
+            const officers = useOfficers()
+            render(officers)
         })
 }

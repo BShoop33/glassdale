@@ -1,4 +1,6 @@
-let convictions = []
+console.log("ConvictionProvider.js");
+
+let convictions = [];
 
 //exports a copy of the criminals objects fetched by getConvictions
 export const useConvictions = () => convictions.slice()

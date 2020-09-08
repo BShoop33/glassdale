@@ -1,3 +1,5 @@
+console.log("ConvictionSelect.js");
+
 import { useConvictions, getConvictions } from "./ConvictionProvider.js"
 
 //creates a variable named eventHub and attaches it to the "container" class in the main portion of index.html
