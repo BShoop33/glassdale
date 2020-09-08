@@ -7,26 +7,30 @@ body {
 
 .row {
     display: flex;
-    margin-top: 2em;
-
+    background-color: white;
+   
 }
 
 .noteFormContainer{
-    display: flex;
-    flex-flow: row wrap;
     border-style: solid;
     font-size: 12pt;
-    min-width: 29em;
-    background-color: #2492FF;
-    color: white;
+    min-width: 25.55em;
+    background-color: #5cc5fa;
+    margin-top: -.2em;
+}
+
+#note-text{
+    width: 28em;
+    margin-left: 1em;
+    margin-top: 1em;
 }
 
 .criminalsContainer {
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-around;
-    flex-flow: row wrap;   
-    background-color:  white
-    
+    background-color: white;
+
 }
 
 .card-criminal{
@@ -40,21 +44,22 @@ body {
     margin-left: 1em;
     line-height: 3px;
     margin-top: 1em;
-    background-color: lightcoral;
+    background-color: #f0bdbd;
     
 }
 
 ul {
     list-style-type: none;
-    
   }
 
 .filters {
     display: flex;
     flex-direction: row;
+    margin-top: 2em;
 }
 
 .dropdown {
     margin-right: 3em;
+    width: 14em;
 }
 
