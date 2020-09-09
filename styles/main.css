@@ -29,7 +29,7 @@ body {
     border-color: black;
 }
 
-#save-button {
+.saveNote {
     width: 10em;
     height: 2em;
     margin-left: 1em;
