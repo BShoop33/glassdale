@@ -1,65 +1,35 @@
 body {
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
-    font-size: 14px;
-    color: #24292e;
     background-color: black;
-}
-
-.row {
-    display: flex;
-    background-color: white;
-}
-
-.noteFormContainer{
-    border-style: solid;
-    font-size: 12pt;
-    min-width: 26.5em;
-    background-color: #5cc5fa;
-    margin-top: -.2em;
-    margin-bottom: -.2em;
-}
-
-#note-text{
-    width: 28em;
-    height: 1.5em;
-    margin-left: 1em;
-    margin-top: 1em;
-    border: 2px;
-    border-style: solid;
-    border-color: black;
-}
-
-.saveNote {
-    width: 10em;
-    height: 2em;
-    margin-left: 1em;
-    margin-top: .5em;
-    background-color: lightgreen;
-}
-
-.criminalsContainer {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    background-color: white;
+    color: #24292e;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    font-size: 14px;    
 }
 
 .card-criminal {
+    background-color: #f0bdbd;
     border: 1px;
     border-color: lightgray;
     border-style: solid;
-    width: 25em;
     height: auto;
-    text-align: left;
-    margin-right: 1em;
-    margin-left: 1em;
     line-height: 3px;
+    margin-left: 1em;
+    margin-right: 1em;
     margin-top: 1em;
-    background-color: #f0bdbd;
+    text-align: left;
+    width: 25em;
 }
 
-ul {
-    list-style-type: none;
+.criminalsContainer {
+    background-color: white;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.dropdown {
+    margin-left: 1.5em;
+    margin-right: 1em;
+    width: 14em;
 }
 
 .filters {
@@ -68,8 +38,38 @@ ul {
     margin-top: 2em;
 }
 
-.dropdown {
-    margin-right: 1em;
-    margin-left: 1.5em;
-    width: 14em;
+.noteFormContainer{
+    background-color: #5cc5fa;
+    border-style: solid;
+    font-size: 12pt;
+    margin-bottom: -.2em;
+    margin-top: -.2em;
+    min-width: 26.5em;
+}
+
+#note-text{
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    height: 1.5em;
+    margin-left: 1em;
+    margin-top: 1em;
+    width: 28em;
+}
+
+.row {
+    background-color: white;
+    display: flex;
+}
+
+.saveNote {
+    background-color: lightgreen;
+    height: 2em;
+    margin-left: 1em;
+    margin-top: .5em;
+    width: 10em;
+}
+
+ul {
+    list-style-type: none;
 }

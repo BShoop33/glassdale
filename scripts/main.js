@@ -15,3 +15,7 @@ CriminalList();
 import { ConvictionSelect } from './convictions/ConvictionSelect.js'
 
 ConvictionSelect();
+
+import { noteForm } from './notes/NoteForm.js'
+
+noteForm();

@@ -1,10 +1,7 @@
-console.log("CriminalList.js");
-
 import { CriminalsHTML } from './Criminal.js'
 import { getCriminals, useCriminals } from './CriminalProvider.js'
 
-
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector(".container");
 
 eventHub.addEventListener("crimeChosen", event => {
     if (event.detail.crimeThatWasChosen !== "0") {
@@ -16,10 +13,9 @@ eventHub.addEventListener("crimeChosen", event => {
     else {
         render(useCriminals())
     }
-})
+});
 
 eventHub.addEventListener("officerSelected", event => {
-    // How can you access the officer name that was selected by the user?
     if (event.detail.officer !== "0") {
         const matchedCriminals = useCriminals().filter(criminal => {
             return criminal.arrestingOfficer === event.detail.officer
@@ -29,8 +25,7 @@ eventHub.addEventListener("officerSelected", event => {
     else {
         render(useCriminals())
     }
-
-})
+});
 
 export const CriminalList = () => {
     getCriminals()
@@ -38,7 +33,7 @@ export const CriminalList = () => {
             const appStateCriminals = useCriminals()
             render(appStateCriminals)
         })
-}
+};
 
 export const OfficerSelect = () => {
     getOfficer()
@@ -46,13 +41,12 @@ export const OfficerSelect = () => {
             const appStateOfficers = useOfficers()
             render(appStateOfficers)
         })
-}
-//////////////////////////////////////////////////////////
-const render = (taco) => {
+};
 
+const render = (taco) => {
     const domElement = document.querySelector(".criminalsContainer")
     let criminalsHTMLArray = taco.map(singleCriminal => {
         return CriminalsHTML(singleCriminal);
     })
     domElement.innerHTML = criminalsHTMLArray.join("");
-}
+};

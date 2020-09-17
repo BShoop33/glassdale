@@ -1,12 +1,7 @@
-console.log("OfficerSelect.js");
-
 import { useOfficers, getOfficers } from "./OfficerProvider.js"
 
-//creates a variable named eventHub and attaches it to the "container" class in the main portion of index.html
-const eventHub = document.querySelector(".container")
-
-//creates a variable named contentTarget and attaches it to the "filters_crime" class in index.html
-const contentTarget = document.querySelector(".filters__officer")
+const eventHub = document.querySelector(".container");
+const contentTarget = document.querySelector(".filters__officer");
 
 eventHub.addEventListener("change", changeEvent => {
     if (changeEvent.target.id === "officerSelect") {
@@ -18,28 +13,26 @@ eventHub.addEventListener("change", changeEvent => {
         })
         eventHub.dispatchEvent(customEvent)
     }
-})
+});
 
 const render = (officerCollection) => {
     contentTarget.innerHTML = `
         <select class="dropdown" id="officerSelect">
             <option value="0">Please select an officer...</option>
-            ${
-        officerCollection.map(
-            officerObj => {
-                const officer = officerObj.name
-                return `<option>${officer}</option>`
-            }).join("")
+            ${officerCollection.map(
+        officerObj => {
+            const officer = officerObj.name
+            return `<option>${officer}</option>`
+        }).join("")
         }
         </select >
     `
-}
+};
 
-//exports and renders the copy of the array containing the crime names that were brought over in the useConvictions function from the ConvictionsProvider.js sheet
 export const OfficerSelect = () => {
     getOfficers()
         .then(() => {
             const officers = useOfficers()
             render(officers)
         })
-}
+};
