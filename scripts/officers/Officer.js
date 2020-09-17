@@ -1,3 +1,5 @@
+console.log("Officer.js");
+
 export const OfficerHTML = (officerObj) => {
 	return `
  		<section id="officer-${officerObj.id}" class="card-officer">

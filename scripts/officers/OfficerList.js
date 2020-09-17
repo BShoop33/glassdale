@@ -1,5 +1,9 @@
+console.log("OfficerList.js");
+
 import { OfficerHTML } from './Officer.js';
 import { getOfficers, useOfficers } from './OfficerProvider.js';
+
+const eventHub = document.querySelector(".container")
 
 export const OfficerList = () => {
     getOfficers()

@@ -1,3 +1,5 @@
+console.log("OfficerProvider.js");
+
 let officers = [];
 
 export const useOfficers = () => officers.slice();

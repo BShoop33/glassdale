@@ -1,7 +1,9 @@
+console.log("OfficerSelect.js");
+
 import { useOfficers, getOfficers } from "./OfficerProvider.js"
 
-const eventHub = document.querySelector(".container");
 const contentTarget = document.querySelector(".filters__officer");
+const eventHub = document.querySelector(".container");
 
 eventHub.addEventListener("change", changeEvent => {
     if (changeEvent.target.id === "officerSelect") {

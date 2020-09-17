@@ -1,9 +1,12 @@
+console.log("NoteForm.js");
+
 import { getCriminals, useCriminals } from '../criminals/CriminalProvider.js'
 import { saveNote } from './NoteProvider.js'
 
-const eventHub = document.querySelector(".container")
-const contentTarget = document.querySelector("#noteFormContainer")
+const eventHub = document.querySelector(".container");
+const contentTarget = document.querySelector("#noteFormContainer");
 
+//NOTEFORMDECIDER
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
         const noteContent = document.querySelector("#noteForm--text")
@@ -22,10 +25,9 @@ eventHub.addEventListener("click", clickEvent => {
             window.alert("Choose a Suspect");
         }
     }
-})
+});
 
-
-
+//NOTEFORMRENDER
 const render = (criminalArray) => {
     contentTarget.innerHTML = `
         <h3>New Note Details</h3>
@@ -39,11 +41,12 @@ const render = (criminalArray) => {
         </select >
         <button id="saveNote">Save Note</button>
     `
-}
+};
 
+//NOTEFORMFEED
 export const noteForm = () => {
     getCriminals()
         .then(() => {
             render(useCriminals())
         })
-}
+};
