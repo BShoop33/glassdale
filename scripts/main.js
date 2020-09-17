@@ -1,21 +1,14 @@
 console.log("Main.js");
 
-// import { OfficerList } from './officers/OfficerList.js';
-
-// OfficerList();
-
+import { ConvictionSelect } from './convictions/ConvictionSelect.js'
+import { CriminalList } from './criminals/CriminalList.js'
+import { noteForm } from './notes/NoteForm.js'
 import { OfficerSelect } from './officers/OfficerSelect.js'
 
+ConvictionSelect();
+CriminalList();
+noteForm();
 OfficerSelect();
 
-import { CriminalList } from './criminals/CriminalList.js'
-
-CriminalList();
-
-import { ConvictionSelect } from './convictions/ConvictionSelect.js'
-
-ConvictionSelect();
-
-import { noteForm } from './notes/NoteForm.js'
-
-noteForm();
+// import { OfficerList } from './officers/OfficerList.js';
+// OfficerList();

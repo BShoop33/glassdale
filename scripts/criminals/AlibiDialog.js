@@ -1,3 +1,5 @@
+console.log("AlibiDialog.js");
+
 import { useCriminals } from './CriminalProvider.js'
 
 const eventHub = document.querySelector(".container");

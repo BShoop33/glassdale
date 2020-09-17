@@ -1,7 +1,10 @@
+console.log("Criminal.js");
+
 import { AlibiDialog } from './AlibiDialog.js'
 
 const eventHub = document.querySelector(".container");
 
+//C1
 export const CriminalsHTML = (criminalObj) => {
     return `
     <section id="criminal-${criminalObj.id}" class="card-criminal">
@@ -19,6 +22,7 @@ export const CriminalsHTML = (criminalObj) => {
     `
 };
 
+//C2
 eventHub.addEventListener("click", event => {
     if (event.target.id.startsWith("associates--")) {
         const [prefix, criminalID] = event.target.id.split("--")
