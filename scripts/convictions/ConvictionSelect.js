@@ -3,7 +3,7 @@ console.log("ConvictionSelect.js");
 import { useConvictions, getConvictions } from "./ConvictionProvider.js"
 
 const eventHub = document.querySelector(".container");
-const contentTarget = document.querySelector(".filters__crime");
+
 
 //E1
 eventHub.addEventListener("change", event => {
@@ -31,6 +31,8 @@ const render = (convictionsCollection) => {
         </select >
     `
 };
+
+const contentTarget = document.querySelector(".filters__crime");
 
 //E3
 export const ConvictionSelect = () => {

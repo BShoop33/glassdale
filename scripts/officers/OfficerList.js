@@ -3,7 +3,7 @@ console.log("OfficerList.js");
 import { OfficerHTML } from './Officer.js';
 import { getOfficers, useOfficers } from './OfficerProvider.js';
 
-const eventHub = document.querySelector(".container")
+//const eventHub = document.querySelector(".container")
 
 export const OfficerList = () => {
     getOfficers()
@@ -21,14 +21,14 @@ const addOfficersToDOM = (anOfficerArray) => {
     domElement.innerHTML = HTMLArray.join("");
 };
 
-eventHub.addEventListener("change", changeEvent => {
-    if (changeEvent.target.id === "officerSelect") {
-        const selectedOfficer = changeEvent.target.value
-        const customEvent = new CustomEvent("officerSelected", {
-            detail: {
-                officer: selectedOfficer
-            }
-        })
-        eventHub.dispatchEvent(customEvent)
-    }
-});
+// eventHub.addEventListener("change", changeEvent => {
+//     if (changeEvent.target.id === "officerSelect") {
+//         const selectedOfficer = changeEvent.target.value
+//         const customEvent = new CustomEvent("officerSelected", {
+//             detail: {
+//                 officer: selectedOfficer
+//             }
+//         })
+//         eventHub.dispatchEvent(customEvent)
+//     }
+// });

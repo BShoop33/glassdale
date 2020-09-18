@@ -7,6 +7,8 @@ const eventHub = document.querySelector(".container");
 
 //B1
 eventHub.addEventListener("crimeChosen", event => {
+    const contentTarget = document.querySelector("#officerSelect")
+
     if (event.detail.crimeThatWasChosen !== "0") {
         const matchingCriminals = useCriminals().filter(criminal => {
             return criminal.conviction === event.detail.crimeThatWasChosen
