@@ -4,6 +4,7 @@ import { useCriminals } from './CriminalProvider.js'
 
 const eventHub = document.querySelector(".container");
 
+//F1
 eventHub.addEventListener("associatesClicked", event => {
     const targetCriminal = useCriminals().find(criminal => {
         return criminal.id === parseInt(event.detail.chosenCriminal)
@@ -23,6 +24,7 @@ eventHub.addEventListener("associatesClicked", event => {
     }
 });
 
+//F2
 export const AlibiDialog = (id) => {
     return `
     <span class="alibiDialog--${id}"></span>
