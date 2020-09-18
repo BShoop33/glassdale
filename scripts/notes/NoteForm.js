@@ -6,7 +6,7 @@ import { saveNote } from './NoteProvider.js'
 const eventHub = document.querySelector(".container");
 const contentTarget = document.querySelector("#noteFormContainer");
 
-//NOTEFORMDECIDER
+//H1
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
         const noteContent = document.querySelector("#noteForm--text")
@@ -27,7 +27,7 @@ eventHub.addEventListener("click", clickEvent => {
     }
 });
 
-//NOTEFORMRENDER
+//H2
 const render = (criminalArray) => {
     contentTarget.innerHTML = `
         <h3>New Note Details</h3>
@@ -43,7 +43,7 @@ const render = (criminalArray) => {
     `
 };
 
-//NOTEFORMFEED
+//H3
 export const noteForm = () => {
     getCriminals()
         .then(() => {
