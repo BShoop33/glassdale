@@ -10,9 +10,9 @@ export const WitnessList = () => {
             addWitnessToDOM(witnessArray);
         })
 }
-const domElement = document.querySelector(".witnessContainer");
-const addWitnessToDOM = (witnessCollection) => {
 
+const addWitnessToDOM = (witnessCollection) => {
+    const domElement = document.querySelector(".witnessContainer");
     let HTMLArray = witnessCollection.map(singleWitness => {
         return Witness(singleWitness)
     }).join("")
