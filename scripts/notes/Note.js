@@ -6,9 +6,9 @@ export const noteHTML = (noteObj) => {
     return `
         <section class="note">
             <br>
-            <div class="note--timestamp">Date:  ${new Date(noteObj.date).toLocaleDateString('en-US')}</div>
-            <div class="note--title">Suspect: ${noteObj.suspect}</div>
-            <div class="note--content">Note: ${noteObj.noteText}</div>
+            <div class="note--timestamp"><strong>Date:</strong>  ${new Date(noteObj.date).toLocaleDateString('en-US')}</div>
+            <div class="note--title"><strong>Suspect:</strong> ${noteObj.suspect}</div>
+            <div class="note--content"><strong>Note:</strong> ${noteObj.noteText}</div>
             <br>
        </section>
     `

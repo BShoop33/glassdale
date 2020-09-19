@@ -2,55 +2,103 @@ body {
     background-color: black;
     color: #24292e;
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
-    font-size: 14px;    
+    font-size: 14px;
+    background-color: #4D4D4D;
+    background-image: url("https://www.transparenttextures.com/patterns/dust.png");
+}
+
+.bodyColumns {
+    display: flex;
 }
 
 .card-criminal {
-    background-color: #f0bdbd;
-    border: 1px;
-    border-color: lightgray;
+    background-color: white;
+    border: 2px;
+    border-color: rgb(0, 0, 255);
     border-style: solid;
     height: auto;
     line-height: 1.5em;
-    margin-left: 1em;
-    margin-right: 1em;
     margin-top: 1em;
     text-align: left;
-    width: 15em;
-    word-wrap: break-word
+    width: 25em;
+    word-wrap: break-word;
 }
 
 .card-witness {
-    
-    background-color: #f0bdbd;
-    border: 1px;
-    border-color: lightgray;
-    border-style: solid;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding-left: .35em;
+    padding-right: .35em;
+    margin-top: 1em;
+    background-color: #FFFF99 ;
     height: auto;
     line-height: 1.5em;
-    margin-left: 1em;
-    margin-right: 1em;
-    margin-top: 1em;
-    text-align: left;
-    width: 15em;
-    word-wrap: break-word
+    margin-left: .25em;
+    margin-right: .25em;
     
+    text-align: left;
+    width: 12em;
+    word-wrap: break-word
+}
+
+#caseNotes {
+    text-shadow: 0px 0px 10px blue;
+    color: white;
+    font-size: 32pt;
+    font-family: 'Vidaloka', serif;
+    font-weight: 800;
+    margin-bottom: 1.25em;
+    margin-left: -.5em;
+    text-align: center
+}
+
+#crimeSelect {
+    font-size: 14pt;
+    margin-bottom: 1em;
+    margin-left: .6em;
+    margin-top: 1em;
+}
+
+#criminalCardAge {
+    font-size: 18pt;
+    margin-top: -2em;
+    margin-right: 1.5em;
+}
+
+#criminalCardCrime {
+    font-size: 18pt;
+    line-height: 1.5;
+    margin-top: -.5em;
+    margin-right: 1.5em;
+    margin-bottom: -.5em;
+}
+
+#criminalCardEndDate {
+    font-size: 18pt;
+    margin-top: 1.5em;
+    margin-right: 1.5em;
 }
 
 #criminalCardName {
+    font-size: 18pt;
     line-height: 1.5em;
+    margin-bottom: 2em;
+    margin-right: 1.5em;
+}
+
+#criminalCardStartDate {
+    font-size: 18pt;
+    margin-bottom: -.5em;
+    margin-right: 1.5em;
 }
 
 .criminalsContainer {
-    background-color: white;
+    color: black;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-}
-
-#criminalsHeader {
-    font-size: 18pt;
-    text-align: center;
+    min-width: 87em;
 }
 
 .dropdown {
@@ -59,26 +107,98 @@ body {
     width: 14em;
 }
 
-.filters {
+#filtersDropdownsFormatting {
     display: flex;
-    flex-direction: row;
+    flex-flow: row;
+    margin-bottom: -1em;
+}
+
+#filtersHeader {
+    color: white;
+    font-size: 16pt;
+    font-weight: 800;
+    margin-left: .5em;
+    width: 86em;
+}
+
+#filtersHeaderFormatting {
+    display: flex;
+    flex-flow: row ;
+    width: 86em;
+}
+
+.filters {
+    margin-left: 1em;
     margin-top: 2em;
+    text-align: left;
+    width: 70em;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1em;
+    text-align: left;
+    width: 40em;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 18pt;
+    font-weight: 800;
+    color: white
 }
 
 .note {
+    font-size: 14pt;
     line-height: 1.5;
-    margin-left: 2em;
+    background-color: white;
     border: .2em;
     border-style: solid;
+    margin-left: -.01em;
     width: 15em;
 }
 
-#noteDetailHeader {
-    font-size: 18pt;
-    margin-left: 1em;
-    text-align: center;
+.note--timestamp {
+    line-height: 1.5;
 }
 
+.note--title {
+    line-height: 1.5;
+    margin-top: .5em;
+}
+
+.note--content {
+    line-height: 1.5;
+    margin-top: .5em;
+}
+
+#note-text{
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    height: 1.5em;
+    margin-top: 1em;
+    width: 28em;
+}
+
+#noteDetailHeader {
+    color: white;
+    font-size: 22pt;
+    margin-left: -1em;
+    text-align: center;
+}
+#noteForm--text {
+    font-size: 14pt;
+    width: 15em;
+    height: 20em;;
+    margin-top: -.3em 
+}
+
+#noteForm--criminal {
+    height: auto;
+    font-size: 14pt;
+    margin-left: -.01em;
+    width: 15.35em;
+}
 .noteFormContainer{
     background-color: #5cc5fa;
     border-style: solid;
@@ -88,41 +208,36 @@ body {
     min-width: 26.5em;
 }
 
-#noteForm--text {
-    margin-left: 4em;
-}
-
-#noteForm--criminal {
-    margin-left: 3em;
-}
-
-#note-text{
-    border: 2px;
-    border-color: black;
-    border-style: solid;
-    height: 1.5em;
-    margin-left: 1em;
-    margin-top: 1em;
-    width: 28em;
-}
-
 #notesColumn {
     display: flex;
-    flex-flow: column;
+    margin-right: -2em;
 }
 
-.row {
-    background-color: white;
-    display: flex;
+#officerSelect {
+    font-size: 14pt;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 #saveNote {
-    background-color: lightgreen;
+    background-color: white;
+    border: 2px;
+    border-style: black;
+    font-size: 14pt;
     height: 2em;
-    margin-left: 5em;
-    margin-bottom: 1em;
+    margin-left: 2.5em;
+    margin-bottom: .55em;
     margin-top: .5em;
     width: 10em;
+}
+
+#theCriminals {
+    color: white;
+    font-size: 32pt;
+    font-family: 'Vidaloka', serif;
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 0px 0px 10px red; 
 }
 
 ul {
@@ -130,15 +245,47 @@ ul {
 }
 
 .witnessContainer {
-    margin-top: .8em;
-    padding-bottom: 1.5em;
-    padding-top: .01em;
-    
-    background-color: lightcyan
+  
+    margin-left: -.25em;
+    border: 7px;
+    border-style: solid;
+    border-color: #FFFF99;
+    padding-bottom: .5em;
+    color: black;
+    background-color: #5d5c61 
     
 }
 
 #witnessHeader {
-    font-size: 18pt;
+    color: white;
+    font-size: 22pt;
     text-align: center;
+}
+
+#witnessName {
+  
+    padding-bottom: -2em;
+    font-size: 18pt;
+    line-height: 1.5em;
+    margin-bottom: 2em;
+    margin-right: 1.5em;
+    margin-top: .5em;
+}
+
+#witnessStatement {
+    margin-top: -1em;
+    font-size: 14pt;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+    margin-right: 1.5em;
+}
+
+#witnessStatements {
+    font-size: 32pt;
+    font-family: 'Vidaloka', serif;
+    font-weight: 800;
+    line-height: 1.5em;
+    margin-bottom: .9em;
+    margin-left: -.5em;
+    text-shadow: 0px 0px 10px blue;
 }

@@ -11,10 +11,10 @@ export const CriminalsHTML = (criminalObj) => {
             <ul>
                 <li><h2 id="criminalCardName">${criminalObj.name}</h2></li>
                 <br>
-                <li id="criminalAge"><strong><p>Age: ${criminalObj.age}<p></strong></li>
-                <li "criminalCrime"><strong><p>Crime: ${criminalObj.conviction}</p></strong></li>
-                <li "criminalStart"><strong><p>Term start: ${new Date(criminalObj.incarceration.start).toLocaleDateString('en-US')}</p></strong></li>
-                <li "criminalEnd"><strong><p>Term end: ${new Date(criminalObj.incarceration.end).toLocaleDateString('en-US')}</p></strong></li>
+                <li id="criminalCardAge"><strong><p>Age:</strong> ${criminalObj.age}<p></li>
+                <li id="criminalCardCrime"><strong><p>Crime:</strong> ${criminalObj.conviction}</p></li>
+                <li id="criminalCardStartDate"><strong><p>Term start:</strong> ${new Date(criminalObj.incarceration.start).toLocaleDateString('en-US')}</p></li>
+                <li id="criminalCardEndDate"><strong><p>Term end:</strong> ${new Date(criminalObj.incarceration.end).toLocaleDateString('en-US')}</p></li>
                 <button id="associates--${criminalObj.id}">Alibis</button>
                 ${AlibiDialog(criminalObj.id)}
             </ul>
