@@ -38,22 +38,22 @@ const render = (taco) => {
     domElement.innerHTML = criminalsHTMLArray.join("");
 };
 
-// eventHub.addEventListener("officerSelected", event => {
-//     if (event.detail.officer !== "0") {
-//         const matchedCriminals = useCriminals().filter(criminal => {
-//             return criminal.arrestingOfficer === event.detail.officer
-//         })
-//         render(matchedCriminals)
-//     }
-//     else {
-//         render(useCriminals())
-//     }
-// });
+eventHub.addEventListener("officerSelected", event => {
+    if (event.detail.officer !== "0") {
+        const matchedCriminals = useCriminals().filter(criminal => {
+            return criminal.arrestingOfficer === event.detail.officerThatWasChosen
+        })
+        render(matchedCriminals)
+    }
+    else {
+        render(useCriminals())
+    }
+});
 
-// export const OfficerSelect = () => {
-//     getOfficer()
-//         .then(() => {
-//             const appStateOfficers = useOfficers()
-//             render(appStateOfficers)
-//         })
-// };
+export const OfficerSelect = () => {
+    getOfficer()
+        .then(() => {
+            const appStateOfficers = useOfficers()
+            render(appStateOfficers)
+        })
+};

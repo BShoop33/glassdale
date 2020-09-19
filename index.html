@@ -10,10 +10,7 @@
 <body>
     <main class="container">
         <header>
-            <div class="filters">
-                <div class="filter filters__crime"></div>
-                <div class="filter filters__incarceration"></div>
-                <div class="filter filters__officer"></div>
+
         </header>
 
         <!-- <article class="officersContainer"></article> -->
@@ -22,18 +19,35 @@
             <div class="officersContainer"></div>
         </div>
 
-        <div class="row">
+        <div class="bodyColumns">
             <div id="notesColumn">
-                <div id="noteFormContainer"></div>
-                <div id="noteListContainer"></div>
-            </div>
-            <h2 id="criminalsHeader">The Criminals
-                <div class="criminalsContainer">
+                <div id="caseNotesHeader">
+                    <p id="caseNotes">Case Notes</p>
+                    <div id="noteFormContainer"></div>
+                    <div id="noteListContainer"></div>
                 </div>
-            </h2>
-            <h3 id="witnessHeader">Witness Statements
-                <div class="witnessContainer"></div>
-            </h3>
+            </div>
+            <div id="criminalsColumn">
+                <p id="theCriminals">The Criminals</p>
+                <div class="filters">
+                    <div id="filtersHeaderFormatting">
+                        <div id="filtersHeader">You may filter by either the crime or arresting officer involved by
+                            clicking one of the following two dropdown menus:</div>
+                    </div>
+                    <div id="filtersDropdownsFormatting">
+                        <div id="filtersCrime" class="filter filters__crime"></div>
+                        <div id="filtersOfficer" class="filter filters__incarceration"></div>
+                        <div class="filter filters__officer"></div>
+                    </div>
+                </div>
+                <div class="criminalsContainer"></div>
+            </div>
+            <div id="witnessesColumn">
+                <div id="witnessHeader">
+                    <p id="witnessStatements">Witness Statements</p>
+                    <div class="witnessContainer"></div>
+                </div>
+            </div>
         </div>
 
 

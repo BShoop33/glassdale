@@ -9,8 +9,9 @@ eventHub.addEventListener("change", changeEvent => {
     if (changeEvent.target.id === "officerSelect") {
         const customEvent = new CustomEvent("officerSelected", {
             detail: {
-                officerThatWasChosen: selectedOfficer
+                officerThatWasChosen: event.target.value
             }
+
         })
         eventHub.dispatchEvent(customEvent)
     }
