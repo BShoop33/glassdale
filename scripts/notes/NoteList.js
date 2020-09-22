@@ -1,6 +1,8 @@
 console.log("NoteList.js")
 
-import { getNotes, useNotes } from './NoteProvider.js'
+
+import { getNotes, useNotes, deleteNote } from './NoteProvider.js'
+
 import { noteHTML } from './Note.js'
 import { getCriminals, useCriminals } from '../criminals/CriminalProvider.js'
 
@@ -33,4 +35,10 @@ eventHub.addEventListener("noteStateChanged", () => {
     render(newNotes, useCriminals())
 })
 
-//  
+eventHub.addEventListener("click", event => {
+    event.preventDefault()
+    if (event.target.id.startsWith("deleteNote--")) {
+        const [prefix, id] = event.target.id.split("--")
+        deleteNote(id)
+    }
+})

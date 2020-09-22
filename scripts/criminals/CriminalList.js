@@ -30,9 +30,9 @@ export const CriminalList = () => {
 };
 
 //B3
-const render = (taco) => {
+const render = (criminalParam) => {
     const domElement = document.querySelector(".criminalsContainer")
-    let criminalsHTMLArray = taco.map(singleCriminal => {
+    let criminalsHTMLArray = criminalParam.map(singleCriminal => {
         return CriminalsHTML(singleCriminal);
     })
     domElement.innerHTML = criminalsHTMLArray.join("");

@@ -1,12 +1,5 @@
 console.log("NoteProvider.js");
 
-/*
-hold onto array of notes
-useNotes - makes copy of array of notes and returns
-get all the notes from database
-add a note to the database
-*/
-
 //G1
 
 let notes = [];
@@ -44,9 +37,10 @@ export const saveNote = noteObj => {
         .then(dispatchStateChangeEvent)
 };
 
-// const deleteNote = noteId => {
-//     return fetch(`http://localhost:8088/notes/${noteId}`, {
-//         method: "DELETE"
-//     })
-//         .then(getNotes)
-// }
+export const deleteNote = noteId => {
+    return fetch(`http://localhost:8088/notes/${noteId}`, {
+        method: "DELETE"
+    })
+        .then(getNotes)
+        .then(dispatchStateChangeEvent)
+}
