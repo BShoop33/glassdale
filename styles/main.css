@@ -245,12 +245,11 @@ ul {
 }
 
 .witnessContainer {
-  
     margin-left: -.25em;
     border: 7px;
     border-style: solid;
     border-color: #FFFF99;
-    padding-bottom: .5em;
+    padding-bottom: 1em;
     color: black;
     background-color: #5d5c61 
     

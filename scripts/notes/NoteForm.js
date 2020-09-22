@@ -15,12 +15,11 @@ eventHub.addEventListener("click", clickEvent => {
         if (noteCriminal.value !== "0") {
             const newNote = {
                 noteText: noteContent.value,
-                suspect: noteCriminal.value,
+                suspectId: parseInt(noteCriminal.value),
                 date: Date.now()
             }
 
             saveNote(newNote);
-
         } else {
             window.alert("Choose a Suspect");
         }
@@ -34,7 +33,7 @@ const render = (criminalArray) => {
         <select class="dropdown" id="noteForm--criminal">
             <option value="0">Please select a criminal...</option>
             ${criminalArray.map(criminalObject => {
-        return `<option value="${criminalObject.name}">${criminalObject.name}</option>`
+        return `<option value="${criminalObject.id}">${criminalObject.name}</option>`
     }).join("")
         }
         </select >
